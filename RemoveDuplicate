@@ -8,5 +8,25 @@ class Solution:
                 i+=1
                 nums[i] = nums[j]
                
-        return i+1        
+        return i+1    
+        
+        
+# Implementing this requires the use of the two-pointer technique. This is where we iterate over the Array in two different places at the same time.
+
+#Read all the elements like we did before, to identify the duplicates. We call this our readPointer.
+#Keep track of the next position in the front to write the next unique element we've found. We call this our writePointer.   
+
+
+
+ class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        i=0
+        for j in range(1, len(nums)):
+            if(nums[j] != nums[j-1]):
+                nums[i] = nums[j]
+                i+=1
+        return i          
+        
         
